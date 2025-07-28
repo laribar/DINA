@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planos e Preços - DINA | Escolha o Plano Ideal para Seus Investimentos</title>
+    <meta name="description" content="Escolha o plano DINA ideal para seu perfil de investidor. Planos a partir de R$ 97/mês com garantia de 30 dias e suporte em português." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdinatradi4004back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                    <stop offset="100%" style="stop-color:#06b6d4"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M16 2L30 9v14L16 30 2 23V9L16 2z" fill="url(#logoGradient)"/>
+                            <path d="M16 8L24 12v8l-8 4-8-4v-8l8-4z" fill="#0a0a0a"/>
+                            <circle cx="16" cy="16" r="3" fill="url(#logoGradient)"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <span class="font-heading text-xl font-bold text-gradient">DINA</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="homepage.html" class="text-text-secondary hover:text-text-primary transition-colors">Início</a>
+                        <a href="how_it_works.html" class="text-text-secondary hover:text-text-primary transition-colors">Como Funciona</a>
+                        <a href="pricing_plans.html" class="text-primary font-medium hover:text-primary-400 transition-colors">Planos</a>
+                        <a href="performance_dashboard.html" class="text-text-secondary hover:text-text-primary transition-colors">Performance</a>
+                        <a href="security_trust.html" class="text-text-secondary hover:text-text-primary transition-colors">Segurança</a>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="getting_started.html" class="btn-secondary">Entrar</a>
+                    <a href="getting_started.html" class="btn-primary">Teste Grátis</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-text-primary p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-16 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-background">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <div class="absolute top-1/3 right-1/3 w-1 h-1 bg-secondary rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                <div class="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-accent rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <span class="text-gradient">Planos que se adaptam</span><br />
+                <span class="text-text-primary">ao seu perfil de investidor</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-text-secondary mb-12 max-w-4xl mx-auto leading-relaxed">
+                Escolha o plano ideal para maximizar seus investimentos com nossa IA avançada. 
+                Todos os planos incluem garantia de 30 dias e suporte em português.
+            </p>
+
+            <!-- Billing Toggle -->
+            <div class="flex items-center justify-center mb-16">
+                <div class="bg-surface rounded-full p-1 flex items-center">
+                    <button id="monthlyBtn" class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-primary text-white">
+                        Mensal
+                    </button>
+                    <button id="annualBtn" class="px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 text-text-secondary hover:text-text-primary">
+                        Anual
+                    </button>
+                </div>
+                <div class="ml-4 flex items-center">
+                    <span class="bg-success/20 text-success text-sm font-medium px-3 py-1 rounded-full">
+                        Economize 20%
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Iniciante Plan -->
+                <div class="card hover:shadow-glow-primary transition-all duration-300">
+                    <div class="text-center mb-8">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Iniciante</h3>
+                        <p class="text-text-secondary mb-6">Perfeito para quem está começando no mundo das criptomoedas</p>
+                        <div class="mb-6">
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold font-mono monthly-price">R$ 97</span>
+                                <span class="text-4xl font-bold font-mono annual-price hidden">R$ 78</span>
+                                <span class="text-text-secondary ml-2">/mês</span>
+                            </div>
+                            <div class="annual-savings hidden text-success text-sm mt-1">
+                                Economize R$ 228/ano
+                            </div>
+                        </div>
+                        <a href="getting_started.html" class="btn-primary w-full mb-6">Começar Agora</a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Estratégias automatizadas básicas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Portfólio máximo: R$ 10.000</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Suporte por email</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Academia de trading gratuita</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Relatórios mensais</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-text-muted mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm text-text-muted">Estratégias avançadas de IA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-text-muted mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm text-text-muted">Acesso à API</span>
+                        </div>
+                    </div>
+
+                    <!-- ROI Calculator -->
+                    <div class="mt-8 pt-6 border-t border-border">
+                        <h4 class="font-semibold mb-4 text-center">Calculadora de Retorno</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm text-text-secondary mb-1">Investimento inicial:</label>
+                                <input type="range" class="w-full roi-slider" min="1000" max="10000" value="5000" data-plan="iniciante" />
+                                <div class="flex justify-between text-xs text-text-muted">
+                                    <span>R$ 1.000</span>
+                                    <span>R$ 10.000</span>
+                                </div>
+                            </div>
+                            <div class="bg-surface-light rounded-lg p-3 text-center">
+                                <div class="text-sm text-text-secondary">Retorno estimado mensal:</div>
+                                <div class="text-lg font-bold text-success roi-result">R$ 350</div>
+                                <div class="text-xs text-text-muted">*Baseado em performance histórica</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profissional Plan (Most Popular) -->
+                <div class="card hover:shadow-glow-secondary transition-all duration-300 border-secondary/30 relative">
+                    <!-- Popular Badge -->
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-secondary text-white text-sm font-semibold px-4 py-2 rounded-full">
+                            Mais Popular
+                        </span>
+                    </div>
+
+                    <div class="text-center mb-8 mt-4">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Profissional</h3>
+                        <p class="text-text-secondary mb-6">Para traders experientes que buscam máxima performance</p>
+                        <div class="mb-6">
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold font-mono monthly-price">R$ 297</span>
+                                <span class="text-4xl font-bold font-mono annual-price hidden">R$ 238</span>
+                                <span class="text-text-secondary ml-2">/mês</span>
+                            </div>
+                            <div class="annual-savings hidden text-success text-sm mt-1">
+                                Economize R$ 708/ano
+                            </div>
+                        </div>
+                        <a href="getting_started.html" class="btn-secondary w-full mb-6">Começar Agora</a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Estratégias avançadas de IA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Portfólio ilimitado</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Suporte prioritário 24/7</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Acesso completo à API</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Análises técnicas avançadas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Relatórios semanais detalhados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Estratégias customizáveis</span>
+                        </div>
+                    </div>
+
+                    <!-- ROI Calculator -->
+                    <div class="mt-8 pt-6 border-t border-border">
+                        <h4 class="font-semibold mb-4 text-center">Calculadora de Retorno</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-sm text-text-secondary mb-1">Investimento inicial:</label>
+                                <input type="range" class="w-full roi-slider" min="10000" max="500000" value="50000" data-plan="profissional" />
+                                <div class="flex justify-between text-xs text-text-muted">
+                                    <span>R$ 10.000</span>
+                                    <span>R$ 500.000+</span>
+                                </div>
+                            </div>
+                            <div class="bg-surface-light rounded-lg p-3 text-center">
+                                <div class="text-sm text-text-secondary">Retorno estimado mensal:</div>
+                                <div class="text-lg font-bold text-success roi-result">R$ 4.250</div>
+                                <div class="text-xs text-text-muted">*Baseado em performance histórica</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institucional Plan -->
+                <div class="card hover:shadow-glow-accent transition-all duration-300">
+                    <div class="text-center mb-8">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Institucional</h3>
+                        <p class="text-text-secondary mb-6">Soluções personalizadas para instituições financeiras</p>
+                        <div class="mb-6">
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold font-mono">Sob</span>
+                            </div>
+                            <div class="text-lg text-text-secondary">Consulta</div>
+                        </div>
+                        <a href="getting_started.html" class="bg-accent hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 w-full inline-block text-center">Solicitar Proposta</a>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Algoritmos customizados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Gerente de conta dedicado</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Conformidade regulatória</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Relatórios de compliance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Integração white-label</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">SLA garantido</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm">Treinamento da equipe</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="mt-8 pt-6 border-t border-border">
+                        <h4 class="font-semibold mb-4 text-center">Solicitar Informações</h4>
+                        <div class="space-y-3">
+                            <input type="email" placeholder="Email corporativo" class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
+                            <input type="text" placeholder="Nome da empresa" class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
+                            <button class="w-full bg-accent hover:bg-accent-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm">
+                                Enviar Solicitação
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-16 bg-surface/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+                    Lucros médios <span class="text-gradient">por plano</span>
+                </h2>
+                <p class="text-xl text-text-secondary">Resultados reais de nossos usuários nos últimos 6 meses</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-surface rounded-xl p-6 mb-4">
+                        <div class="text-2xl font-bold text-primary mb-2">Iniciante</div>
+                        <div class="text-4xl font-mono font-bold text-success mb-2">+18.4%</div>
+                        <div class="text-text-secondary text-sm">Retorno médio mensal</div>
+                    </div>
+                    <p class="text-text-secondary text-sm">Baseado em 2.847 usuários ativos</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-surface rounded-xl p-6 mb-4 border border-secondary/30">
+                        <div class="text-2xl font-bold text-secondary mb-2">Profissional</div>
+                        <div class="text-4xl font-mono font-bold text-success mb-2">+26.7%</div>
+                        <div class="text-text-secondary text-sm">Retorno médio mensal</div>
+                    </div>
+                    <p class="text-text-secondary text-sm">Baseado em 1.234 usuários ativos</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-surface rounded-xl p-6 mb-4">
+                        <div class="text-2xl font-bold text-accent mb-2">Institucional</div>
+                        <div class="text-4xl font-mono font-bold text-success mb-2">+34.2%</div>
+                        <div class="text-text-secondary text-sm">Retorno médio mensal</div>
+                    </div>
+                    <p class="text-text-secondary text-sm">Baseado em 89 clientes institucionais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+                    Compare todos os <span class="text-gradient">recursos</span>
+                </h2>
+                <p class="text-xl text-text-secondary">Veja em detalhes o que cada plano oferece</p>
+            </div>
+
+            <div class="card-elevated overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-border">
+                            <th class="text-left py-4 px-6 font-heading font-semibold">Recursos</th>
+                            <th class="text-center py-4 px-6 font-heading font-semibold">Iniciante</th>
+                            <th class="text-center py-4 px-6 font-heading font-semibold text-secondary">Profissional</th>
+                            <th class="text-center py-4 px-6 font-heading font-semibold">Institucional</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border">
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Estratégias de IA</td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">3 básicas</span>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">15+ avançadas</span>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Ilimitadas + customizadas</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Limite de portfólio</td>
+                            <td class="py-4 px-6 text-center">R$ 10.000</td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Ilimitado</span>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Ilimitado</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Suporte</td>
+                            <td class="py-4 px-6 text-center">Email</td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">24/7 Prioritário</span>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Gerente dedicado</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Acesso à API</td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-5 h-5 text-error mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-5 h-5 text-success mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-5 h-5 text-success mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Relatórios</td>
+                            <td class="py-4 px-6 text-center">Mensais</td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Semanais detalhados</span>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Diários + compliance</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Análises técnicas</td>
+                            <td class="py-4 px-6 text-center">Básicas</td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Avançadas</span>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="text-success">Personalizadas</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Customização de estratégias</td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-5 h-5 text-error mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-5 h-5 text-success mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </td>
+                            <td class="py-4 px-6 text-center">
+                                <svg class="w-5 h-5 text-success mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="py-16 bg-surface/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+                    Formas de <span class="text-gradient">pagamento</span>
+                </h2>
+                <p class="text-xl text-text-secondary">Pague da forma que for mais conveniente para você</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">PIX</h3>
+                    <p class="text-text-secondary text-sm">Pagamento instantâneo e seguro</p>
+                </div>
+
+                <div class="card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary/20 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">Cartão de Crédito</h3>
+                    <p class="text-text-secondary text-sm">Parcelamento em até 12x sem juros</p>
+                </div>
+
+                <div class="card text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-accent/20 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-semibold mb-2">Transferência Bancária</h3>
+                    <p class="text-text-secondary text-sm">Para pagamentos institucionais</p>
+                </div>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="font-medium">30 dias de garantia</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="font-medium">Cancele a qualquer momento</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="font-medium">Suporte em Português</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+                    Perguntas <span class="text-gradient">frequentes</span>
+                </h2>
+                <p class="text-xl text-text-secondary">Tire suas dúvidas sobre nossos planos e serviços</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-question" data-target="faq1">
+                        <span class="font-semibold">Posso trocar de plano a qualquer momento?</span>
+                        <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq1" class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                        <p class="text-text-secondary">Sim! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento. As mudanças são aplicadas imediatamente e o valor é ajustado proporcionalmente no próximo ciclo de cobrança.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-question" data-target="faq2">
+                        <span class="font-semibold">Como funciona a garantia de 30 dias?</span>
+                        <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq2" class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                        <p class="text-text-secondary">Se você não estiver satisfeito com os resultados nos primeiros 30 dias, devolvemos 100% do valor pago, sem perguntas. Basta entrar em contato com nosso suporte.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-question" data-target="faq3">
+                        <span class="font-semibold">Qual é o retorno médio esperado?</span>
+                        <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq3" class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                        <p class="text-text-secondary">Nossos usuários têm obtido retornos médios entre 15-35% ao mês, dependendo do plano e condições de mercado. Importante: investimentos em criptomoedas envolvem riscos e resultados passados não garantem resultados futuros.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-question" data-target="faq4">
+                        <span class="font-semibold">Preciso ter conhecimento técnico para usar?</span>
+                        <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq4" class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                        <p class="text-text-secondary">Não! A DINA foi desenvolvida para ser simples de usar. Nossa IA cuida de toda a parte técnica, você só precisa definir seus objetivos e acompanhar os resultados. Oferecemos também uma academia gratuita para quem quer aprender mais.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-question" data-target="faq5">
+                        <span class="font-semibold">Como funciona o pagamento anual?</span>
+                        <svg class="w-5 h-5 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq5" class="faq-answer hidden mt-4 pt-4 border-t border-border">
+                        <p class="text-text-secondary">No pagamento anual, você economiza 20% e paga uma única vez por 12 meses de serviço. A garantia de 30 dias continua válida, e você pode cancelar a qualquer momento com reembolso proporcional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold mb-6">
+                Comece a <span class="text-gradient">investir com IA</span><br />
+                hoje mesmo
+            </h2>
+            <p class="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
+                Escolha seu plano e deixe nossa inteligência artificial trabalhar para maximizar seus investimentos 24/7.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="getting_started.html" class="btn-primary text-lg px-8 py-4 shadow-glow-primary">
+                    Começar Teste Grátis
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
+                <a href="performance_dashboard.html" class="btn-secondary text-lg px-8 py-4">
+                    Ver Performance
+                </a>
+            </div>
+            
+            <p class="text-sm text-text-secondary">
+                ✓ 30 dias de garantia &nbsp;&nbsp;
+                ✓ Suporte em português &nbsp;&nbsp;
+                ✓ Cancele quando quiser
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                    <stop offset="100%" style="stop-color:#06b6d4"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M16 2L30 9v14L16 30 2 23V9L16 2z" fill="url(#footerLogoGradient)"/>
+                            <path d="M16 8L24 12v8l-8 4-8-4v-8l8-4z" fill="#0a0a0a"/>
+                            <circle cx="16" cy="16" r="3" fill="url(#footerLogoGradient)"/>
+                        </svg>
+                        <span class="ml-3 font-heading text-xl font-bold text-gradient">DINA</span>
+                    </div>
+                    <p class="text-text-secondary mb-4 max-w-md">
+                        Sua plataforma de trading automatizada com IA. Democratizando estratégias sofisticadas de investimento para todos os brasileiros.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-heading font-semibold mb-4">Plataforma</h3>
+                    <ul class="space-y-2">
+                        <li><a href="how_it_works.html" class="text-text-secondary hover:text-text-primary transition-colors">Como Funciona</a></li>
+                        <li><a href="pricing_plans.html" class="text-text-secondary hover:text-text-primary transition-colors">Planos e Preços</a></li>
+                        <li><a href="performance_dashboard.html" class="text-text-secondary hover:text-text-primary transition-colors">Performance</a></li>
+                        <li><a href="security_trust.html" class="text-text-secondary hover:text-text-primary transition-colors">Segurança</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-heading font-semibold mb-4">Suporte</h3>
+                    <ul class="space-y-2">
+                        <li><a href="getting_started.html" class="text-text-secondary hover:text-text-primary transition-colors">Começar</a></li>
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary transition-colors">Central de Ajuda</a></li>
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary transition-colors">Contato</a></li>
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary transition-colors">API Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-text-secondary text-sm">
+                    © 2025 DINA Trading Platform. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary text-sm transition-colors">Termos de Uso</a>
+                    <a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary text-sm transition-colors">Política de Privacidade</a>
+                    <a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary text-sm transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script>
+        // Billing Toggle
+        const monthlyBtn = document.getElementById('monthlyBtn');
+        const annualBtn = document.getElementById('annualBtn');
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const annualPrices = document.querySelectorAll('.annual-price');
+        const annualSavings = document.querySelectorAll('.annual-savings');
+
+        monthlyBtn.addEventListener('click', () => {
+            monthlyBtn.classList.add('bg-primary', 'text-white');
+            monthlyBtn.classList.remove('text-text-secondary');
+            annualBtn.classList.remove('bg-primary', 'text-white');
+            annualBtn.classList.add('text-text-secondary');
+            
+            monthlyPrices.forEach(price => price.classList.remove('hidden'));
+            annualPrices.forEach(price => price.classList.add('hidden'));
+            annualSavings.forEach(saving => saving.classList.add('hidden'));
+        });
+
+        annualBtn.addEventListener('click', () => {
+            annualBtn.classList.add('bg-primary', 'text-white');
+            annualBtn.classList.remove('text-text-secondary');
+            monthlyBtn.classList.remove('bg-primary', 'text-white');
+            monthlyBtn.classList.add('text-text-secondary');
+            
+            monthlyPrices.forEach(price => price.classList.add('hidden'));
+            annualPrices.forEach(price => price.classList.remove('hidden'));
+            annualSavings.forEach(saving => saving.classList.remove('hidden'));
+        });
+
+        // ROI Calculator
+        const roiSliders = document.querySelectorAll('.roi-slider');
+        
+        roiSliders.forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                const plan = e.target.dataset.plan;
+                const resultElement = e.target.closest('.card').querySelector('.roi-result');
+                
+                let percentage;
+                switch(plan) {
+                    case 'iniciante':
+                        percentage = 0.07; // 7% monthly return
+                        break;
+                    case 'profissional':
+                        percentage = 0.085; // 8.5% monthly return
+                        break;
+                    default:
+                        percentage = 0.07;
+                }
+                
+                const monthlyReturn = value * percentage;
+                resultElement.textContent = `R$ ${monthlyReturn.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+            });
+        });
+
+        // FAQ Toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const targetId = question.dataset.target;
+                const answer = document.getElementById(targetId);
+                const icon = question.querySelector('.faq-icon');
+                
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
