@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const exchange = document.querySelector('input[name="exchange"]:checked')?.value;
     const apiKey = document.getElementById("apiKey")?.value;
     const apiSecret = document.getElementById("apiSecret")?.value;
-
     const token = localStorage.getItem("token");
 
     if (!exchange || !apiKey || !apiSecret) {
@@ -38,28 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const data = await res.json();
 
       if (res.ok) {
-        alert("Conexão salva com sucesso!");
-        // Avança para a próxima etapa (se quiser usar tela própria, troque isso)
-        nextStep(4);
+        alert("Chaves salvas com sucesso!");
+        nextStep(4); // ✅ avança para a etapa "Estratégia"
       } else {
         alert(data.detail || "Erro ao salvar as chaves.");
       }
+
     } catch (err) {
       console.error(err);
       alert("Erro ao conectar com o servidor.");
     }
   });
 });
-
-// Define nextStep() caso Rocket.new não tenha injetado
-if (typeof nextStep !== "function") {
-  window.nextStep = function (step) {
-    for (let i = 1; i <= 4; i++) {
-      const el = document.getElementById(`step-${i}`);
-      if (el) el.classList.add("hidden");
-    }
-    const target = document.getElementById(`step-${step}`);
-    if (target) target.classList.remove("hidden");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-}
