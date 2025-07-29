@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("btn-testar-conexao");
+  document.body.addEventListener("click", async function (e) {
+    const btn = e.target.closest("#btn-testar-conexao");
 
-  if (!btn) return;
+    if (!btn) return;
 
-  btn.addEventListener("click", async function () {
     const exchange = document.querySelector('input[name="exchange"]:checked')?.value;
     const apiKey = document.getElementById("apiKey")?.value;
     const apiSecret = document.getElementById("apiSecret")?.value;
