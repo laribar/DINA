@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - DINA</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                <stop offset="100%" style="stop-color:#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M16 2L30 9v14L16 30 2 23V9L16 2z" fill="url(#logoGradient)"/>
+                        <path d="M16 8L24 12v8l-8 4-8-4v-8l8-4z" fill="#0a0a0a"/>
+                        <circle cx="16" cy="16" r="3" fill="url(#logoGradient)"/>
+                    </svg>
+                    <span class="ml-3 font-heading text-xl font-bold text-gradient">DINA</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="pt-32 pb-12 bg-background">
+        <div class="max-w-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-3xl font-bold mb-6">Acesse sua conta</h1>
+            <p class="text-text-secondary mb-8">Entre para acessar sua área personalizada da DINA</p>
+
+            <div class="card-elevated p-8">
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-left text-sm font-medium mb-2">E-mail</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="seu@email.com" required />
+                    </div>
+                    <div>
+                        <label for="senha" class="block text-left text-sm font-medium mb-2">Senha</label>
+                        <input type="password" id="senha" name="senha" class="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="********" required />
+                    </div>
+                    <div id="error-message" class="text-error text-sm"></div>
+                    <button type="submit" class="btn-primary w-full">Entrar</button>
+                </form>
+                <p class="text-text-secondary text-sm mt-6">Ainda não tem conta? <a href="getting_started.html" class="text-primary hover:underline">Crie uma aqui</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = '';
+
+            try {
+                const response = await fetch('https://dina-backend.onrender.com/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                if (!response.ok) throw new Error('E-mail ou senha inválidos');
+
+                const data = await response.json();
+                localStorage.setItem('token', data.access_token);
+                window.location.href = 'dashboard.html'; // redirecionar
+            } catch (err) {
+                errorDiv.textContent = err.message;
+            }
+        });
+    </script>
+</body>
+</html>
