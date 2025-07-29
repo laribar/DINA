@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (res.ok) {
         alert("Conexão salva com sucesso!");
-        // Redireciona ou avança para a próxima etapa
-        window.location.href = "/pages/strategy.html";
+        // Avança para a próxima etapa (se quiser usar tela própria, troque isso)
+        nextStep(4);
       } else {
         alert(data.detail || "Erro ao salvar as chaves.");
       }
@@ -50,3 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Define nextStep() caso Rocket.new não tenha injetado
+if (typeof nextStep !== "function") {
+  window.nextStep = function (step) {
+    for (let i = 1; i <= 4; i++) {
+      const el = document.getElementById(`step-${i}`);
+      if (el) el.classList.add("hidden");
+    }
+    const target = document.getElementById(`step-${step}`);
+    if (target) target.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+}
