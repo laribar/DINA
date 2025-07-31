@@ -107,7 +107,7 @@
     <!-- Pricing Cards -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Iniciante Plan Atualizado -->
                 <div class="card hover:shadow-glow-primary transition-all duration-300">
                     <div class="text-center mb-8">
@@ -343,7 +343,7 @@
                         <div class="space-y-3">
                             <div>
                                 <label class="block text-sm text-text-secondary mb-1">Investimento inicial:</label>
-                                <input type="range" class="w-full roi-slider" min="50000" max="500000" value="100000" data-plan="elite" />
+                                <input type="range" class="w-full roi-slider" min="50000" max="500000" value="100000" data-plan="Elite Trader" />
                                 <div class="flex justify-between text-xs text-text-muted">
                                     <span>R$ 50.000</span>
                                     <span>R$ 500.000</span>
@@ -823,19 +823,24 @@
                 let percentage;
                 switch(plan) {
                     case 'iniciante':
-                        percentage = 0.07; // 7% monthly return
+                        percentage = 0.02; // 7% de retorno mensal
                         break;
-                    case 'profissional':
-                        percentage = 0.085; // 8.5% monthly return
+                    case 'intermediario':
+                        percentage = 0.04; // 8,5% de retorno mensal
+                        break;
+                    case 'pro':
+                        percentage = 0.07; // 8,5% de retorno mensal
+                        break;
+                    case 'elitetrader':
+                        percentage = 0.085; // 8,5% de retorno mensal (ou maior se desejar)
                         break;
                     default:
-                        percentage = 0.07;
+                        percentage = 0.07; // fallback
                 }
                 
                 const monthlyReturn = value * percentage;
                 resultElement.textContent = `R$ ${monthlyReturn.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
-            });
-        });
+
 
         // FAQ Toggle
         const faqQuestions = document.querySelectorAll('.faq-question');
