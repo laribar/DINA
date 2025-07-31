@@ -307,21 +307,73 @@
                     </div>
                 </div>
 
-                    <!-- Contact Form -->
+                <!-- Elite Trader Plan -->
+                <div class="card hover:shadow-glow-accent transition-all duration-300 border-accent/30">
+                    <div class="text-center mb-8">
+                        <h3 class="font-heading text-2xl font-bold mb-2 text-accent">Elite Trader</h3>
+                        <p class="text-text-secondary mb-6">Plano completo com arbitragem, IA avançada e até 40 ativos</p>
+                        <div class="mb-6">
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold font-mono monthly-price text-accent">R$ 499,90</span>
+                                <span class="text-4xl font-bold font-mono annual-price hidden">R$ 399,90</span>
+                                <span class="text-text-secondary ml-2">/mês</span>
+                            </div>
+                            <div class="annual-savings hidden text-success text-sm mt-1">
+                                Economize R$ 1.200/ano
+                            </div>
+                        </div>
+                        <a href="getting_started.html" class="btn-accent w-full mb-6">Assinar Elite</a>
+                    </div>
+                
+                    <div class="space-y-4">
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">40 ativos simultâneos</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Execução 24/7 com IA combinada</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Auto gerenciamento de carteira</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Simulação de carteira virtual</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Timeframes: 1d, 4h, 1h, 15min</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Alertas via Telegram</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Integração com Exchanges (inclui arbitragem)</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Relatórios completos + API</span></div>
+                        <div class="flex items-center">✅ <span class="text-sm ml-2">Customização e suporte prioritário</span></div>
+                    </div>
+                
+                    <!-- ROI Calculator -->
                     <div class="mt-8 pt-6 border-t border-border">
-                        <h4 class="font-semibold mb-4 text-center">Solicitar Informações</h4>
+                        <h4 class="font-semibold mb-4 text-center">Calculadora de Retorno</h4>
                         <div class="space-y-3">
-                            <input type="email" placeholder="Email corporativo" class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-                            <input type="text" placeholder="Nome da empresa" class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-                            <button class="w-full bg-accent hover:bg-accent-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm">
-                                Enviar Solicitação
-                            </button>
+                            <div>
+                                <label class="block text-sm text-text-secondary mb-1">Investimento inicial:</label>
+                                <input type="range" class="w-full roi-slider" min="50000" max="500000" value="100000" data-plan="elite" />
+                                <div class="flex justify-between text-xs text-text-muted">
+                                    <span>R$ 50.000</span>
+                                    <span>R$ 500.000</span>
+                                </div>
+                            </div>
+                            <div class="bg-surface-light rounded-lg p-3 text-center">
+                                <div class="text-sm text-text-secondary">Retorno estimado mensal:</div>
+                                <div class="text-lg font-bold text-success roi-result">R$ 8.500</div>
+                                <div class="text-xs text-text-muted">*Baseado em performance histórica</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+
+                    <!-- Lista de Espera - Site em Desenvolvimento -->
+                    <div class="mt-8 pt-6 border-t border-border">
+                        <div class="bg-warning/10 text-warning border border-warning/30 rounded-lg p-4 mb-6 text-sm text-center">
+                            🚧 Este site ainda está em desenvolvimento. O acesso completo estará disponível em breve. 
+                            Cadastre-se abaixo para entrar na lista de espera e ser notificado assim que lançarmos!
+                        </div>
+                        <h4 class="font-semibold mb-4 text-center">Entrar na Lista de Espera</h4>
+                        <form class="space-y-3" action="https://formsubmit.co/seuemail@dominio.com" method="POST">
+                            <input type="text" name="nome" placeholder="Seu nome completo" required class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
+                            <input type="tel" name="celular" placeholder="Celular com DDD" required class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
+                            <input type="email" name="email" placeholder="Seu melhor e-mail" required class="w-full bg-surface-light border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent" />
+                            <button type="submit" class="w-full bg-accent hover:bg-accent-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm">
+                                Entrar na Lista
+                            </button>
+                        </form>
+                    </div>
 
     <!-- Social Proof Section -->
     <section class="py-16 bg-surface/30">
@@ -489,7 +541,7 @@
                 <p class="text-xl text-text-secondary">Pague da forma que for mais conveniente para você</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div class="card text-center">
                     <div class="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
