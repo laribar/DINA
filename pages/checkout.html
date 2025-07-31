@@ -1,0 +1,23 @@
+<!-- checkout.html -->
+<section class="py-16 bg-surface text-text-primary">
+  <div class="max-w-xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-6">Finalizar Pagamento</h2>
+    <form id="checkout-form" class="space-y-4" method="POST" action="/criar-pagamento">
+      <input type="text" name="nome" placeholder="Nome completo" required class="w-full border rounded-lg px-4 py-2" />
+      <input type="email" name="email" placeholder="E-mail" required class="w-full border rounded-lg px-4 py-2" />
+      <input type="tel" name="celular" placeholder="Celular com DDD" required class="w-full border rounded-lg px-4 py-2" />
+
+      <select name="plano" required class="w-full border rounded-lg px-4 py-2">
+        <option value="">Selecione o plano</option>
+        <option value="Iniciante">Iniciante – R$ 49,90</option>
+        <option value="Intermediário">Intermediário – R$ 149,90</option>
+        <option value="Pro Trader">Pro Trader – R$ 299,90</option>
+        <option value="Elite Trader">Elite Trader – R$ 499,90</option>
+      </select>
+
+      <button type="submit" class="w-full bg-primary hover:bg-primary-600 text-white font-semibold py-2 rounded-lg">
+        Continuar para Pagamento
+      </button>
+    </form>
+  </div>
+</section>
