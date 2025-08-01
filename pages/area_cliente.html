@@ -9,29 +9,51 @@
 <body class="bg-background text-text-primary">
     <div class="max-w-4xl mx-auto text-center pt-32">
         <h1 class="text-3xl font-bold mb-6">Bem-vindo(a) à sua área da DINA 🚀</h1>
-        <p class="text-lg text-text-secondary mb-6">
-            Aqui você verá seu painel personalizado.
+        <p id="user-info" class="text-lg text-text-secondary mb-6">
+            Carregando seus dados...
         </p>
         <button id="logout" class="btn-secondary">Sair</button>
     </div>
 
     <script>
-        // ✅ Recupera o token da URL (caso tenha vindo do Google)
+        // ✅ Captura token da URL se presente
         const urlParams = new URLSearchParams(window.location.search);
         const tokenFromURL = urlParams.get('token');
 
         if (tokenFromURL) {
             localStorage.setItem('token', tokenFromURL);
-            // Limpa a URL para não deixar o ?token=... visível
             const cleanUrl = window.location.origin + window.location.pathname;
             window.history.replaceState({}, document.title, cleanUrl);
         }
 
-        // ✅ Verifica se já existe token no localStorage
         const token = localStorage.getItem('token');
         if (!token) {
             window.location.href = 'login.html';
         }
+
+        // 🔎 Busca dados do usuário
+        fetch('https://dina-backend.onrender.com/me', {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Token inválido');
+            return response.json();
+        })
+        .then(user => {
+            const userInfo = document.getElementById('user-info');
+            userInfo.innerHTML = `
+                <strong>Nome:</strong> ${user.nome} <br>
+                <strong>Email:</strong> ${user.email} <br>
+                <strong>Experiência:</strong> ${user.experiencia || '—'} <br>
+                <strong>Objetivo:</strong> ${user.objetivo || '—'}
+            `;
+        })
+        .catch(() => {
+            localStorage.removeItem('token');
+            window.location.href = 'login.html';
+        });
 
         // 🔒 Logout
         document.getElementById('logout').addEventListener('click', () => {
