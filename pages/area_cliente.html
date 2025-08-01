@@ -16,13 +16,24 @@
     </div>
 
     <script>
-        // ✅ Verifica se está logado
+        // ✅ Recupera o token da URL (caso tenha vindo do Google)
+        const urlParams = new URLSearchParams(window.location.search);
+        const tokenFromURL = urlParams.get('token');
+
+        if (tokenFromURL) {
+            localStorage.setItem('token', tokenFromURL);
+            // Limpa a URL para não deixar o ?token=... visível
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+
+        // ✅ Verifica se já existe token no localStorage
         const token = localStorage.getItem('token');
         if (!token) {
             window.location.href = 'login.html';
         }
 
-        // Logout
+        // 🔒 Logout
         document.getElementById('logout').addEventListener('click', () => {
             localStorage.removeItem('token');
             window.location.href = 'login.html';
