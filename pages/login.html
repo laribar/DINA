@@ -49,6 +49,16 @@
                     <div id="error-message" class="text-error text-sm"></div>
                     <button type="submit" id="btn-login" class="btn-primary w-full">Entrar</button>
                 </form>
+
+                <!-- Botão Google -->
+                <div class="mt-6">
+                    <button onclick="window.location.href='https://dina-backend.onrender.com/login/google'"
+                            class="w-full flex items-center justify-center px-4 py-3 bg-white text-black border border-border rounded-lg hover:bg-gray-100 transition">
+                        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" class="w-5 h-5 mr-3" />
+                        Entrar com Google
+                    </button>
+                </div>
+
                 <p class="text-text-secondary text-sm mt-6">
                     Ainda não tem conta? <a href="getting_started.html" class="text-primary hover:underline">Crie uma aqui</a>
                 </p>
@@ -76,16 +86,21 @@
 
                 const data = await response.json();
 
-                // Salva o token e redireciona
                 localStorage.setItem('token', data.access_token);
-
-                // ✅ Redireciona para a página individual do usuário
                 window.location.href = 'area_cliente.html';
 
             } catch (err) {
                 errorDiv.textContent = err.message;
             }
         });
+
+        // Caso retorne token via query param no callback do Google:
+        const urlParams = new URLSearchParams(window.location.search);
+        const tokenFromGoogle = urlParams.get('token');
+        if (tokenFromGoogle) {
+            localStorage.setItem('token', tokenFromGoogle);
+            window.location.href = 'area_cliente.html';
+        }
     </script>
 </body>
 </html>
