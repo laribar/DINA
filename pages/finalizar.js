@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     try {
-      const res = await fetch("https://dina-backend.onrender.com/onboarding", {
+      const res = await fetch("https://dina-backend-5uop.onrender.com/onboarding", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
