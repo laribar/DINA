@@ -26,9 +26,9 @@
         </div>
         <nav class="flex-1 p-4">
             <ul class="space-y-4">
-                <li><a href="#" class="flex items-center space-x-3 text-primary hover:underline"><i class="fa-solid fa-user"></i><span>Perfil</span></a></li>
-                <li><a href="#" class="flex items-center space-x-3 hover:underline"><i class="fa-solid fa-cog"></i><span>Configurações</span></a></li>
-                <li><a href="#" class="flex items-center space-x-3 hover:underline"><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a></li>
+                <li><a href="#perfil" class="flex items-center space-x-3 text-primary hover:underline"><i class="fa-solid fa-user"></i><span>Perfil</span></a></li>
+                <li><a href="#config" class="flex items-center space-x-3 hover:underline"><i class="fa-solid fa-cog"></i><span>Configurações</span></a></li>
+                <li><a href="#dashboard" class="flex items-center space-x-3 hover:underline"><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a></li>
             </ul>
         </nav>
         <div class="p-4 border-t border-border">
@@ -43,6 +43,51 @@
             <p class="text-text-secondary">Carregando seus dados...</p>
         </section>
         
+        <!-- Seção de Configurações do Robô -->
+        <div id="configuracoes-robo" class="p-6 bg-surface rounded-lg border border-border shadow mb-10">
+            <h2 class="text-xl font-bold mb-4">Configurações do Robô</h2>
+            <form id="config-form" class="space-y-4">
+                <!-- Seleção de Ativos -->
+                <div>
+                    <label for="ativos" class="block font-bold mb-2">Selecione os Ativos</label>
+                    <select id="ativos" multiple class="w-full p-2 border border-border rounded">
+                        <option value="BTCUSDT">BTC/USDT</option>
+                        <option value="ETHUSDT">ETH/USDT</option>
+                        <option value="BNBUSDT">BNB/USDT</option>
+                    </select>
+                </div>
+                <!-- Estratégia -->
+                <div>
+                    <label for="estrategia" class="block font-bold mb-2">Estratégia</label>
+                    <select id="estrategia" class="w-full p-2 border border-border rounded">
+                        <option value="mm">Médias Móveis</option>
+                        <option value="rsi">RSI</option>
+                        <option value="macd">MACD</option>
+                    </select>
+                </div>
+                <!-- Trailing Stop -->
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="trailing-stop" class="form-checkbox">
+                    <label for="trailing-stop" class="font-bold">Ativar Trailing Stop</label>
+                </div>
+                <!-- Stop Loss -->
+                <div>
+                    <label for="stop-loss" class="block font-bold mb-2">Stop Loss (%)</label>
+                    <input type="number" id="stop-loss" step="0.1" min="0" class="w-full p-2 border border-border rounded" placeholder="Ex: 2.5">
+                </div>
+                <!-- Take Profit -->
+                <div>
+                    <label for="take-profit" class="block font-bold mb-2">Take Profit (%)</label>
+                    <input type="number" id="take-profit" step="0.1" min="0" class="w-full p-2 border border-border rounded" placeholder="Ex: 5">
+                </div>
+                <!-- Botões -->
+                <div class="flex gap-4 mt-6">
+                    <button type="button" id="start-bot" class="btn-primary flex-1"><i class="fa-solid fa-play mr-2"></i>Iniciar Robô</button>
+                    <button type="button" id="stop-bot" class="btn-secondary flex-1"><i class="fa-solid fa-stop mr-2"></i>Parar Robô</button>
+                </div>
+            </form>
+        </div>
+
         <!-- Cards de resumo -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <div class="p-6 bg-surface rounded-lg border border-border shadow">
@@ -70,26 +115,19 @@
     </main>
 
     <script>
-        // ✅ Captura token da URL se presente
         const urlParams = new URLSearchParams(window.location.search);
         const tokenFromURL = urlParams.get('token');
-
         if (tokenFromURL) {
             localStorage.setItem('token', tokenFromURL);
             const cleanUrl = window.location.origin + window.location.pathname;
             window.history.replaceState({}, document.title, cleanUrl);
         }
-
         const token = localStorage.getItem('token');
-        if (!token) {
-            window.location.href = 'login.html';
-        }
+        if (!token) window.location.href = 'login.html';
 
-        // 🔎 Busca dados do usuário
+        // Busca dados do usuário
         fetch('https://dina-backend-5uop.onrender.com/me', {
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
+            headers: { 'Authorization': 'Bearer ' + token }
         })
         .then(response => {
             if (!response.ok) throw new Error('Token inválido');
@@ -110,10 +148,18 @@
             window.location.href = 'login.html';
         });
 
-        // 🔒 Logout
+        // Logout
         document.getElementById('logout').addEventListener('click', () => {
             localStorage.removeItem('token');
             window.location.href = 'login.html';
+        });
+
+        // Configurações do Robô (placeholder)
+        document.getElementById('start-bot').addEventListener('click', () => {
+            alert('Robô iniciado com as configurações definidas!');
+        });
+        document.getElementById('stop-bot').addEventListener('click', () => {
+            alert('Robô parado com sucesso!');
         });
     </script>
 </body>
