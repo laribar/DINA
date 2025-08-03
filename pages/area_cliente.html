@@ -60,43 +60,149 @@
         <!-- CONFIGURAÇÕES -->
         <section id="config" class="conteudo-section hidden">
             <div id="configuracoes-robo" class="p-6 bg-surface rounded-lg border border-border shadow mb-10">
-                <h2 class="text-xl font-bold mb-4">Configurações do Robô</h2>
-                <form id="config-form" class="space-y-4">
+                <h2 class="text-xl font-bold mb-6">⚙️ Configurações do Robô</h2>
+        
+                <form id="config-form" class="space-y-8">
+                    <!-- ================= INTERVALOS E EXECUÇÃO ================= -->
                     <div>
-                        <label for="ativos" class="block font-bold mb-2">Selecione os Ativos</label>
-                        <select id="ativos" multiple class="w-full p-2 border border-border rounded">
-                            <option value="BTCUSDT">BTC/USDT</option>
-                            <option value="ETHUSDT">ETH/USDT</option>
-                            <option value="BNBUSDT">BNB/USDT</option>
-                        </select>
+                        <h3 class="text-lg font-bold mb-4">⏱️ Intervalos e Execução</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="timeframe-binance" class="block font-bold mb-2">Timeframe Binance</label>
+                                <select id="timeframe-binance" name="TIMEFRAME_BINANCE" class="w-full p-2 border border-border rounded">
+                                    <option value="1m">1m</option>
+                                    <option value="5m" selected>5m</option>
+                                    <option value="15m">15m</option>
+                                    <option value="1h">1h</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="intervalo-espera" class="block font-bold mb-2">Intervalo de Espera (segundos)</label>
+                                <input type="number" id="intervalo-espera" name="INTERVALO_ESPERA" class="w-full p-2 border border-border rounded" value="300">
+                            </div>
+                        </div>
                     </div>
+        
+                    <!-- ================= PARÂMETROS DE ORDEM ================= -->
                     <div>
-                        <label for="estrategia" class="block font-bold mb-2">Estratégia</label>
-                        <select id="estrategia" class="w-full p-2 border border-border rounded">
-                            <option value="mm">Médias Móveis</option>
-                            <option value="rsi">RSI</option>
-                            <option value="macd">MACD</option>
-                        </select>
+                        <h3 class="text-lg font-bold mb-4">💰 Parâmetros de Ordem</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label for="quantidade-padrao" class="block font-bold mb-2">Qtd. Padrão</label>
+                                <input type="number" id="quantidade-padrao" name="QUANTIDADE_PADRAO" class="w-full p-2 border border-border rounded" value="1">
+                            </div>
+                            <div>
+                                <label for="valor-minimo-operacao" class="block font-bold mb-2">Valor mínimo por operação (USDT)</label>
+                                <input type="number" id="valor-minimo-operacao" name="VALOR_MINIMO_OPERACAO" class="w-full p-2 border border-border rounded" value="10.10">
+                            </div>
+                            <div>
+                                <label for="limiar-valor-usdt" class="block font-bold mb-2">Limiar valor USDT</label>
+                                <input type="number" id="limiar-valor-usdt" name="LIMIAR_VALOR_USDT" class="w-full p-2 border border-border rounded" value="1.0">
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <input type="checkbox" id="trailing-stop" class="form-checkbox">
-                        <label for="trailing-stop" class="font-bold">Ativar Trailing Stop</label>
-                    </div>
+        
+                    <!-- ================= GRID DINÂMICO ================= -->
                     <div>
-                        <label for="stop-loss" class="block font-bold mb-2">Stop Loss (%)</label>
-                        <input type="number" id="stop-loss" step="0.1" min="0" class="w-full p-2 border border-border rounded" placeholder="Ex: 2.5">
+                        <h3 class="text-lg font-bold mb-4">📊 Parâmetros Grid Dinâmico</h3>
+                        <div>
+                            <label class="block font-bold mb-2">PCTs Compra (%)</label>
+                            <input type="text" id="grid-pcts-compra" name="GRID_PCTS_COMPRA" class="w-full p-2 border border-border rounded" value="-3,-6,-9">
+                        </div>
+                        <div class="mt-4">
+                            <label class="block font-bold mb-2">PCTs Venda (%)</label>
+                            <input type="text" id="grid-pcts-venda" name="GRID_PCTS_VENDA" class="w-full p-2 border border-border rounded" value="1.5,3,5">
+                        </div>
                     </div>
+        
+                    <!-- ================= MACHINE LEARNING ================= -->
                     <div>
-                        <label for="take-profit" class="block font-bold mb-2">Take Profit (%)</label>
-                        <input type="number" id="take-profit" step="0.1" min="0" class="w-full p-2 border border-border rounded" placeholder="Ex: 5">
+                        <h3 class="text-lg font-bold mb-4">🧠 Parâmetros de Machine Learning</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block font-bold mb-2">Ativos ML (auto ou lista)</label>
+                                <input type="text" id="ativos-ml" name="ATIVOS_ML" class="w-full p-2 border border-border rounded" value="auto">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-2">Candles previsão</label>
+                                <input type="number" id="n-candles" name="N_CANDLES_PREVISAO" class="w-full p-2 border border-border rounded" value="15">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-2">Window Size</label>
+                                <input type="number" id="window-size" name="WINDOW_SIZE" class="w-full p-2 border border-border rounded" value="20">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block font-bold mb-2">Timeframes ML</label>
+                            <input type="text" id="timeframes-ml" name="TIMEFRAMES_ML" class="w-full p-2 border border-border rounded" value="15m,1h,1d">
+                        </div>
                     </div>
-                    <div class="flex gap-4 mt-6">
+        
+                    <!-- ================= PARÂMETROS DE TRADE ================= -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">🤖 Parâmetros de Trade</h3>
+                        <div>
+                            <label class="block font-bold mb-2">Ativos interesse (auto ou lista)</label>
+                            <input type="text" id="ativos-interesse" name="ATIVOS_INTERESSE" class="w-full p-2 border border-border rounded" value="auto">
+                        </div>
+                        <div class="mt-4">
+                            <label class="block font-bold mb-2">Timeframes interesse</label>
+                            <input type="text" id="timeframes-interesse" name="TIMEFRAMES_INTERESSE" class="w-full p-2 border border-border rounded" value="15m">
+                        </div>
+                    </div>
+        
+                    <!-- ================= RISCO E ESTRATÉGIAS ================= -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">🔒 Risco e Estratégias</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block font-bold mb-2">Stop Loss (%)</label>
+                                <input type="number" id="stop-loss" name="STOP_LOSS_PCT" class="w-full p-2 border border-border rounded" value="-5">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-2">Take Profit (%)</label>
+                                <input type="number" id="take-profit" name="TAKE_PROFIT_PCT" class="w-full p-2 border border-border rounded" value="1.5">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-2">Trailing Stop (%)</label>
+                                <input type="number" id="trailing-stop" name="TRAILING_STOP_PERCENTUAL" class="w-full p-2 border border-border rounded" value="3">
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label class="block font-bold mb-2">Estratégias selecionadas</label>
+                            <input type="text" id="estrategias-selecionadas" name="ESTRATEGIAS_SELECIONADAS" class="w-full p-2 border border-border rounded" value="final_unificada">
+                        </div>
+                    </div>
+        
+                    <!-- ================= CAPITAL E LIMITES ================= -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">💼 Gestão de Capital</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block font-bold mb-2">Valor padrão alocação (%)</label>
+                                <input type="number" id="valor-padrao-alocacao" name="VALOR_PADRAO_ALOCACAO" class="w-full p-2 border border-border rounded" value="5">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-2">Alocação Máxima (%)</label>
+                                <input type="number" id="pct-max-alocacao" name="PCT_MAX_ALOCACAO" class="w-full p-2 border border-border rounded" value="20">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-2">Mínimo por operação (USDT)</label>
+                                <input type="number" id="min-valor-operacao" name="MIN_VALOR_OPERACAO" class="w-full p-2 border border-border rounded" value="5.0">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- ================= BOTÕES ================= -->
+                    <div class="flex gap-4 mt-8">
                         <button type="button" id="start-bot" class="btn-primary flex-1"><i class="fa-solid fa-play mr-2"></i>Iniciar Robô</button>
                         <button type="button" id="stop-bot" class="btn-secondary flex-1"><i class="fa-solid fa-stop mr-2"></i>Parar Robô</button>
+                        <button type="submit" class="btn-primary flex-1"><i class="fa-solid fa-save mr-2"></i>Salvar Configurações</button>
                     </div>
                 </form>
             </div>
         </section>
+
 
         <!-- DASHBOARD -->
         <section id="dashboard" class="conteudo-section hidden">
